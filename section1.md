@@ -12,9 +12,13 @@
 	</li>
 	<li><strong>HTML页面的渲染过程？</strong>
 		<p>
+			DOM => CSSDOM => Render Tree => Layout => Paint
+			<img src="/resource/CRP.jpg" alt="">
+			当用户请求页面时，浏览器会抓取HTML同时生成DOM，然后抓取CSS并建立CSS对象模型，最后通过匹配DOM和CSS对象生成渲染树。在需要处理的JavaScript文件被解决之前，浏览器不会开始对页面进行渲染。作为开发者，我们要明确的告诉浏览器不要等待，直接开始渲染。具体方法是使用HTML中的defer和async两个属性。
+            事实上，defer更好一些（因为对于IE9及以下用户对于IE9及以下用户，很有可能会中断脚本）。同时，减少第三方库和脚本的使用，尤其是社交网站的分享按键和<iframe>嵌入（比如地图）。你可以使用静态的社交网站分享按键（例如SSBG的）和指向交互地图的静态链接去代替他们。
 		</p>
 		<p>参考文章:
-			http://www.ruanyifeng.com/blog/2016/08/http.html
+			https://gold.xitu.io/entry/582492025bbb5000590ef04d/
 			http://www.qixing318.com/article/the-http-protocol-handling-process.html
 			http://www.liaoxuefeng.com/wiki/001374738125095c955c1e6d8bb493182103fac9270762a000/001386832653051fd44e44e4f9e4ed08f3e5a5ab550358d000
 		</p>		
