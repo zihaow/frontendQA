@@ -51,7 +51,44 @@
 	</li>
 	<li><strong>你对JS面向对象编程的理解？如何创建对象？子类父类继承等相关知识</strong>
 		<p>
-			当时面试官问了一句需不需要构造函数...脑短路没想明白就说了句不用 T T
+		Way 1
+		function person(fname,lname,age,eyecolor)
+		{
+		   this.firstname=fname;
+		   this.lastname=lname;
+		   this.age=age;
+		   this.eyecolor=eyecolor;
+		}
+
+		myFather=new person("John","Doe",50,"blue");
+		document.write(myFather.firstname + " is " + myFather.age + " years old.");
+		</p>
+		<p>
+		Way 2
+		var Robot =
+		{
+		    metal: "Titanium",
+		    killAllHumans: function()
+		    {
+			alert("Exterminate!");
+		    }
+		};
+		Robot.killAllHumans();
+		</p>
+		<p>
+		var NewObject = {};
+		NewObject['property1'] = value;
+		NewObject['property2'] = value;
+		NewObject['method'] = function(){ /* function code here */ }
+		</p>
+		<p>
+		Use way 1 if you want to create several similar objects. In your example, Person (you should start the name with a capital 		  letter) is called the constructor function. This is similar to classes in other OO languages.
+		</p>
+		<p>
+		Use way 2 if you only need one object of a kind (like a singleton). If you want this object to inherit from another one, 		then you have to use a constructor function though.
+		</p>
+		<p>
+		Use way 3 if you want to initialize properties of the object depending on other properties of it or if you have dynamic 		property names.
 		</p>
 		<p>参考文章:
 
@@ -67,7 +104,7 @@
 	<li><strong>RESTFUL API的理解</strong>
 		<p>
 		</p>
-		<p>参考文章:
+		<p>参考文章: http://stackoverflow.com/questions/6843951/which-way-is-best-for-creating-an-object-in-javascript-is-var-necessary-befor
 		</p>		
 	</li>
 	<li><strong>微信JSSDK如何授权和调用API，实际应用例子？</strong>
